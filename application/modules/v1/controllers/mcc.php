@@ -18,7 +18,7 @@ class mcc extends REST_Controller
 			$this->response(array( ERR_PREFIX => ERR_FORBIDDEN ), 403);
 	}
 
-	public function customer_put()
+	public function user_put()
 	{
 		if ( ! $this->cdn_api->scan_variable() )
 				$this->response(array( ERR_PREFIX => ERR_METHOD_NOT_ALLOWED ), 403);

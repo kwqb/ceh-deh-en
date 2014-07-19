@@ -38,9 +38,10 @@
 |
 */
 
-$route['cdn'] = "welcome";
+$route['v1'] = "welcome";
 $route['404_override'] = '';
 
+$route['v1/(:any)']						= "mcc/$1";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

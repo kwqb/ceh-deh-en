@@ -13,7 +13,7 @@ define('CORE_CLASS_MEDIA',						'media');
 define('MEDIA_PATH',							'MediaPath');
 define('MEDIA_TYPE',							'MediaType');
 
-define('VERB_ID',								'cid');
+define('VERB_ID',								'uid');
 define('VERB_NODE_ENDPOINT',					'ep');
 define('VERB_METHOD_ENDPOINT',					'method');
 
