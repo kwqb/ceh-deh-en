@@ -69,7 +69,8 @@ Mongodb will auto create if database and collection are not exist. Below some ex
 
 1.Database purge_log
    1.Collection purge_request
-      ```javascript
+   ```javascript
+
 	"_id" : ObjectId("53c7665dccd806e3530041a7"),
 	"id" : "0001",
 	"endpoint" : "purge",
@@ -78,6 +79,7 @@ Mongodb will auto create if database and collection are not exist. Below some ex
 	"time" : NumberLong(1405576797),
 	"ipaddress" : "127.0.0.1",
 	"executed" : NumberLong(0)
-      ```
+
+   ```
 
 
