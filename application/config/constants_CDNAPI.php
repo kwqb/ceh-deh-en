@@ -24,6 +24,7 @@ define('PURGE_LOG_COLL',						'purge_request');
 
 define('NOT_YET_EXECUTED',						0);
 define('EXECUTED',								1);
+define('IN_PROGRESS_EXECUTION',					2);
 
 define('ERR_PREFIX',							'error');
 define('ERR_FORBIDDEN',							'Forbidden.');
