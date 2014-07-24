@@ -7,20 +7,36 @@ API for ceh deh en application
 2. Mysql Database
 3. Mongodb Database
 
-
 ##Installation
+
+###Environment Variable
+Below are variables that predefined on environment variable
+```
+MYSQL_CDN
+MYSQL_CDN_User
+MYSQL_CDN_Password
+
+MYSQL_cdn_api
+MYSQL_cdn_api_User
+MYSQL_cdn_api_Password
+
+MONGODB_cdn_api
+
+MEMCACHE_session_server_1
+MEMCACHE_session_port_1
+```
 
 ###Databases
 
 ####MYSQL
 
 1. Create New database
-```
-create database API_CDN
-```
+   ```
+   create database API_CDN
+   ```
 2. Create table api-keys for generating and storing api keys for customer communicating to server
-```
-CREATE TABLE `api-keys` (
+   ```
+   CREATE TABLE `api-keys` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `key` varchar(40) NOT NULL,
 	  `level` int(2) NOT NULL,
@@ -30,10 +46,10 @@ CREATE TABLE `api-keys` (
 	  `date_created` int(11) NOT NULL,
 	  PRIMARY KEY (`id`)
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-```
+   ```
 
 3. Create table logs for logging any request from client
-```
+   ```
 	CREATE TABLE `api-keys` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `key` varchar(40) NOT NULL,
@@ -44,7 +60,7 @@ CREATE TABLE `api-keys` (
 	  `date_created` int(11) NOT NULL,
 	  PRIMARY KEY (`id`)
 	) 
-```
+   ```
 
 
 ####MongoDB

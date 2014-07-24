@@ -48,9 +48,9 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
+$db['default']['hostname'] = getenv('MYSQL_CDN');
+$db['default']['username'] = getenv('MYSQL_CDN_User');
+$db['default']['password'] = getenv('MYSQL_CDN_Password');
 $db['default']['database'] = '';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
@@ -64,9 +64,9 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
-$db['api']['hostname'] = 'localhost';
-$db['api']['username'] = 'root';
-$db['api']['password'] = '';
+$db['api']['hostname'] = getenv('MYSQL_cdn_api');
+$db['api']['username'] = getenv('MYSQL_cdn_api_User');
+$db['api']['password'] = getenv('MYSQL_cdn_api_Password');
 $db['api']['database'] = 'API_CDN';
 $db['api']['dbdriver'] = 'mysqli';
 $db['api']['dbprefix'] = '';
