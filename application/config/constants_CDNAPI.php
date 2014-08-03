@@ -31,5 +31,8 @@ define('ERR_FORBIDDEN',							'Forbidden.');
 define('ERR_METHOD_NOT_ALLOWED',				'Method not allowed.');
 
 
+define('ERR_UNKNOWN',							'Something Happen');
+
+
 /* End of file constants_CDNAPI.php */
 /* Location: ./application/config/constants_CDNAPI.php */

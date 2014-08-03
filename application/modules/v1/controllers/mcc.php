@@ -31,10 +31,13 @@ class mcc extends REST_Controller
 		$this->load->library( $node_endpoint );
 		$this->$node_endpoint->set_resource(RESOURCE_VARNAME,$this->_args);
 		$this->$node_endpoint->init();
-		$this->$node_endpoint->$method_endpoint();
 
+		//save the requested purged media, if something is wrong with the current process, throw unknown error
+		if ( ! $this->$node_endpoint->$method_endpoint() )
+			$this->response( $this->$node_endpoint->display_errors() , 404);
 
-		$this->response(array('error' => 'success.'));
+		//give requested purge id, for user monitoring requested media that want to be purged
+		$this->response(array('PurgeRequestId' => $this->$node_endpoint->purgeid ));
 	}
 
 }
