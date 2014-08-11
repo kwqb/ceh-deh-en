@@ -39,7 +39,7 @@ class mcc extends REST_Controller
 			$this->response( $this->$node_endpoint->display_errors() , 404);
 
 		//give requested purge id, for user monitoring requested media that want to be purged
-		$this->response(array('PurgeRequestId' => $this->$node_endpoint->output() ));
+		$this->response( $this->$node_endpoint->output() );
 	}
 
 	public function user_get()
@@ -57,7 +57,8 @@ class mcc extends REST_Controller
 		if ( ! $this->$node_endpoint->$method_endpoint() )
 			$this->response( $this->$node_endpoint->display_errors() , 404);
 
-
+		//give requested purge id, for user monitoring requested media that want to be purged
+		$this->response( $this->$node_endpoint->output() );
 	}
 
 

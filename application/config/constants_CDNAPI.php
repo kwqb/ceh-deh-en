@@ -22,6 +22,8 @@ define('RESOURCE_VARNAME',						'args');
 define('PURGE_LOG_DBNAME',						'purge_log');
 define('PURGE_LOG_COLL',						'purge_request');
 
+define('ERR_UNKNOWN_PURGEID',					'Unknown PurgeId');
+
 define('NOT_YET_EXECUTED',						0);
 define('EXECUTED',								1);
 define('IN_PROGRESS_EXECUTION',					2);

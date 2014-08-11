@@ -39,7 +39,7 @@ class Purge extends Media {
 		}
 		//set the purge id to the object
 		$this->set_resource('purgeid', $ret);
-		$this->set_output($this->purgeid);
+		$this->set_output(array ( "PurgeRequestId" => $this->purgeid) );
 
 		return TRUE;
 	}
@@ -74,7 +74,28 @@ class Purge extends Media {
 
 	public function check()
 	{
+		$this->CI =& get_instance();
+		$this->CI->load->model("model_purge");
+		$log = $this->CI->model_purge->get_single_log($this->id);
 
+		if(empty($log))
+		{
+			$this->set_error(ERR_UNKNOWN_PURGEID);
+			return FALSE;
+		}
+
+		$opt = array ( 
+					"AccountNumber" => $log["customerid"],
+					"status" 	=> "2013-09-09 17:59",
+					"Id" 			=> (string) $log["_id"],
+					"InDate" 		=> $log["time"],
+					"Media_Path" 	=> $log["MediaPath"],
+					"Media_Type" 	=> $log["MediaType"]
+		 );
+
+		$this->set_output($opt);
+
+		return TRUE;
 	}
 
 	

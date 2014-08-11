@@ -22,4 +22,15 @@ class Model_purge extends CI_Model
 			return FALSE;
 		}
 	}
+
+	public function get_single_log($id)
+	{
+		try{
+			return $this->_mongo_cdn->{PURGE_LOG_COLL}->findOne( array("_id" =>New MongoId($id))) ;
+		}
+		catch(exception $e)
+		{
+			return FALSE;
+		}
+	}
 }
