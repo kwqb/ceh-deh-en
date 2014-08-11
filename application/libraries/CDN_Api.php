@@ -33,7 +33,7 @@ class CDN_API {
 	 */
 	public function auth()
 	{
-		if(  $this->_apiuser->id !== $this->{VERB_ID} )
+		if(  ! is_object($this->_apiuser) || $this->_apiuser->id !== $this->{VERB_ID} )
 			return FALSE;
 
 		return TRUE;

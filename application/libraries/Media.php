@@ -4,6 +4,7 @@ class Media {
 	protected $args 		= array();
 	protected $MediaPath 	= "";
 	protected $MediaType	= "";
+	public $output			= "";
 	
 	function __construct()
 	{

@@ -15,7 +15,7 @@ define('MEDIA_TYPE',							'MediaType');
 
 define('VERB_ID',								'uid');
 define('VERB_NODE_ENDPOINT',					'ep');
-define('VERB_METHOD_ENDPOINT',					'method');
+define('VERB_METHOD_ENDPOINT',					'm');
 
 define('RESOURCE_VARNAME',						'args');
 

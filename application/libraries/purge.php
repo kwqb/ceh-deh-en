@@ -28,22 +28,19 @@ class Purge extends Media {
 							"executed"	=> NOT_YET_EXECUTED
 						);
 
-		$this->CI->load->library('mongo');
-		$mongodb = $this->CI->mongo->get_connection( 'cdn' );
+		$this->CI->load->model("model_purge");
 		
-		try{
-
-			$mongodb->{PURGE_LOG_COLL}->save($log);
-
-			//set the purge id to the object
-			$this->set_resource('purgeid', (string) $log['_id']);
-		}
-		catch(exception $e)
+		$ret =  $this->CI->model_purge->insert_new_log($log);
+		
+		if( empty($ret) )
 		{
 			$this->set_error(ERR_UNKNOWN);
 			return FALSE;
 		}
-		
+		//set the purge id to the object
+		$this->set_resource('purgeid', $ret);
+		$this->set_output($this->purgeid);
+
 		return TRUE;
 	}
 
@@ -59,6 +56,27 @@ class Purge extends Media {
 
 		return $this->error_message;
 	}
+
+	public function set_output($opt)
+	{
+		$this->output = $opt;
+	}
+
+	public function output()
+	{
+		return $this->output;
+	}
+
+	private function start_purge_process()
+	{
+
+	}
+
+	public function check()
+	{
+
+	}
+
 	
 }
 
