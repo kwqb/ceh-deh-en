@@ -28,6 +28,10 @@ define('NOT_YET_EXECUTED',						0);
 define('EXECUTED',								1);
 define('IN_PROGRESS_EXECUTION',					2);
 
+define('PHRASE_'.NOT_YET_EXECUTED,				"IN QUEUE");
+define('PHRASE_'.EXECUTED,						"EXECUTED");
+define('PHRASE_'.IN_PROGRESS_EXECUTION,			"IN PROGRESS");
+
 define('ERR_PREFIX',							'error');
 define('ERR_FORBIDDEN',							'Forbidden.');
 define('ERR_METHOD_NOT_ALLOWED',				'Method not allowed.');

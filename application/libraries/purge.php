@@ -76,6 +76,8 @@ class Purge extends Media {
 	{
 		$this->CI =& get_instance();
 		$this->CI->load->model("model_purge");
+		$this->CI->load->helper('date');
+		
 		$log = $this->CI->model_purge->get_single_log($this->id);
 
 		if(empty($log))
@@ -85,12 +87,12 @@ class Purge extends Media {
 		}
 
 		$opt = array ( 
-					"AccountNumber" => $log["customerid"],
-					"status" 	=> "2013-09-09 17:59",
-					"Id" 			=> (string) $log["_id"],
-					"InDate" 		=> $log["time"],
-					"Media_Path" 	=> $log["MediaPath"],
-					"Media_Type" 	=> $log["MediaType"]
+					"AccountId" 	=> $log["customerid"],
+					"status" 		=> constant("PHRASE_".$log['executed']),
+					"IdPurge" 		=> (string) $log["_id"],
+					"DateRequest" 	=> unix_to_human(local_to_gmt($log["time"]),FALSE,'eu'),
+					"File_Path" 	=> $log["MediaPath"],
+					"File_Type" 	=> $log["MediaType"]
 		 );
 
 		$this->set_output($opt);
@@ -98,7 +100,6 @@ class Purge extends Media {
 		return TRUE;
 	}
 
-	
 }
 
 /* End of file welcome.php */
