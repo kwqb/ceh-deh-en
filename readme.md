@@ -11,6 +11,9 @@ API for ceh deh en application
 
 ###Environment Variable
 Below are variables that predefined on environment variable
+
+####fastcgi_custom
+
 ```
 MYSQL_CDN
 MYSQL_CDN_User
@@ -24,6 +27,26 @@ MONGODB_cdn_api
 
 MEMCACHE_session_server_1
 MEMCACHE_session_port_1
+```
+
+####profile ( terminal environment variables)
+```
+export MYSQL_CDN=localhost
+export MYSQL_CDN_User=
+export MYSQL_CDN_Password=
+
+export MYSQL_cdn_api=localhost
+export MYSQL_cdn_api_User=root
+export MYSQL_cdn_api_Password=
+
+export MONGODB_cdn_api=127.0.0.1:27017
+
+##########################
+## MEMCACHE
+##########################
+
+export MEMCACHE_session_server_1=127.0.0.1
+export MEMCACHE_session_port_1=11211
 ```
 
 ###Databases
@@ -81,5 +104,14 @@ Mongodb will auto create if database and collection are not exist. Below some ex
 	"executed" : NumberLong(0)
 
    ```
+
+Cron / CLI script
+```
+. PROFILE_FILE_ENVIRONMENT; export PATH=$PATH:PATH_FOLDER;PHP_EXECUTABLE_PATH APPLICATION_FOLDER/index.php CONTROLLER_CLASS_NAME METHOD_OF_CLASS
+
+example:
+. /var/www/profile; export PATH=$PATH:/usr/sbin/;php /var/www/apps/index.php welcome
+
+```
 
 
